@@ -13,9 +13,7 @@ module AwesomePrintActiveRecord
   # Add ActiveRecord class names to the dispatcher pipeline.
   #------------------------------------------------------------------------------
   def printable_with_active_record(object)
-    puts "Object inside awesome: #{object.inspect}"
     printable = printable_without_active_record(object)
-    puts "printable"+printable.inspect
     if printable == :self
       if object.is_a?(ActiveRecord::Base)
         printable = :active_record_instance

@@ -13,7 +13,10 @@ module AwesomePrintMongoid
   # Add ActiveRecord class names to the dispatcher pipeline.
   #------------------------------------------------------------------------------
   def printable_with_mongoid(object)
+    
+      puts "Object inside awesome: #{object.inspect}"
     printable = printable_without_mongoid(object)
+        puts "printable"+printable.inspect
     if printable == :self
       if object.is_a?(ActiveRecord::Base)
         printable = :mongoid_instance
