@@ -6,6 +6,8 @@
 module AwesomePrintMongoid
 
   def self.included(base)
+    puts "#{base.class} #{base} ", "included module AwesomePrintMongoid\n"
+    
     base.send :alias_method, :printable_without_mongoid, :printable
     base.send :alias_method, :printable, :printable_with_mongoid
   end
