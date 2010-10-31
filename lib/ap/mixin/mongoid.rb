@@ -30,7 +30,7 @@ module AwesomePrintMongoid
   # Format Mongoid instance object.
   #------------------------------------------------------------------------------
   def awesome_mongoid_instance(object)
-    keys = (object.fields.keys + object.attributes.keys + object.associations.keys).uniq
+    keys = (object.fields.keys + object.attributes.keys).uniq
       data = keys.inject(ActiveSupport::OrderedHash.new) do |hash, name|
         hash[name.to_sym] = object.send(name) if object.respond_to?(name)
         hash
